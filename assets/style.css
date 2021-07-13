@@ -1,0 +1,896 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root { /*Custom variables containing colours attached to the root variable of the document*/
+    --main: #6082F3;
+    --secondary: #F3a260;
+}
+
+body {
+    background-color: #042B58;
+    position: relative;
+}
+
+#logo {
+    position: relative;
+    height: 100px;
+    width: auto;
+    margin: 25px 0 0 25px;
+}
+
+main {
+    min-height: 100vh;
+    overflow: auto;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+footer {
+    background-color: #192342;
+    color: #fff;
+    font-size: 1em;
+    text-align: center;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    line-height: 100px;
+}
+
+/*Start of navigation bar modification*/
+nav {
+    background-color: #192342;
+    height: 150px;
+    width: 100%;
+    position: fixed;
+    flex-direction: row;
+    z-index: 1; /*Gives the z-index an arbitrary value of 1 which shows how relatively close the element is compared to others*/
+}
+
+nav ul {
+    float: right;
+    margin-right: 40px;
+    width: calc(75% - 50px); /*To account for right margin of 50px so the element doesn't shift down*/
+    text-align: right;
+}
+
+nav ul li {
+    line-height: 100px;
+    width: 100%;
+}
+
+.navitem {
+    background-color: var(--main); /*Assigns it the colour from the custom variable*/
+    border: 1px solid;
+    cursor: pointer; /*Makes the pointer display as a clicking pointer when hovering above the element*/
+    display: inline-block;
+    height: 10vmin;
+    margin-top: 25px;
+    min-height: 80px;
+    max-height: 100px;
+    min-width: 70px;
+    max-width: 140px;
+    position: relative;
+    text-align: center;
+    transition: transform .1s; /*Gives the element a transition delay of 0.1s*/
+    width: 14vw;
+}
+
+.navitem a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4vmax;
+    color: black;
+    padding: 25px 0;
+    width: 100%;
+    height: 100%;
+}
+
+.navitem.active::before, .navitem.active::after {
+    content: " ";
+    pointer-events: none; /*Does not display a pointer when hovered over*/
+    position: absolute;
+    border-bottom: 3px solid var(--main);
+    border-radius: 4px;
+
+    left: 50%;
+    transform: translateX(-50%); /*Moves the element -50% on the x-axis*/
+}
+
+.navitem.active::before {
+    bottom: -5px;
+    width: 60%;
+}
+
+.navitem.active::after {
+    bottom: -10px;
+    width: 40%;
+}
+
+.navitem:hover {
+    background-color: var(--secondary);
+    transform: scale(1.1); /*Transforms the element when hovered over and makes it 1.1 times bigger*/
+    z-index: 2;
+}
+
+.navitem.active:hover::before, .navitem.active:hover::after {
+    border-color: var(--secondary);
+}
+
+.navitem.active:hover::before {
+    bottom: -10px;
+}
+
+.navitem.active:hover::after {
+    bottom: -20px;
+}
+/*End of navigation bar modification*/
+
+/*Start of formatting for friends page*/
+.profile-picture {
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    border: solid 2px;
+    float: left;
+}
+
+#self-info {
+    padding-top: 200px;
+    margin-left: 25px;
+}
+
+.friends-info {
+    width: 25vmax;
+    height: 48px;
+    border: solid 2px;
+    border-color: black;
+    background-color: #fff;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    display: inline-block;
+}
+
+#friends-list, #friend-request {
+    margin-top: 100px;
+    margin-left: 25px;
+}
+
+#friends-list-header {
+    width: 20vmax;
+    height: 50px;
+    border: solid 2px;
+    background-color: #fff;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 27px;
+    min-width: 200px;
+}
+
+.scroll-div {
+    width: calc(25vmax + 150px); /*Adds the user's information width of 25vmax with an additional 150px to account for the profile picture, borders, paddings and margins*/
+    height: 310px;
+    overflow: hidden; /*Hides excess text*/
+    overflow-y: scroll; /*Creates a scrollbar to access the overflowed text*/
+    direction: rtl; /*Positions the scrollbar on the left*/
+}
+
+.scroll-div-friend-request {
+    width: 200px;
+    height: 150px;
+    overflow: hidden;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.scroll-object {
+    direction: ltr; /*Reorganizes elements properly in left to right order*/
+    padding-left: 10px;
+}
+
+#friend-request-header {
+    width: 15vmax;
+    height: 50px;
+    background-color: #fff;
+    text-align: center;
+    font-weight: bold;
+    border: solid 2px;
+    min-width: 150px;
+    line-height: 50px;
+    margin-left: 27px;
+    margin-bottom: 30px;
+}
+
+.new-friends { /*Formatting for the new-friends checkbox*/
+    margin: 20px 20px 12px 20px;
+}
+
+.new-friends-text { /*Formatting for text within the label*/
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#accept-friends {
+    margin-left: 70px;
+    margin-top: 20px;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 30px;
+}
+/*End of formatting for friends page*/
+
+/*Start of formatting for profile page*/
+#profile-info {
+    padding-top: 50px;
+    margin-left: 25px;
+}
+
+#profile-page-picture {
+    background-color: #fff;
+    border: solid 2px;
+    width: 15vw;
+    min-height: 150px;
+    min-width: 150px;
+    float: left;
+}
+
+.profile-info {
+    display: inline-block;
+    width: 30vw;
+    min-width: 280px;
+    border: solid 2px;
+    background-color: #fff;
+    height: 5vw;
+    max-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.bio {
+    display: inline-block;
+    width: 30vw;
+    min-width: 280px;
+    border: solid 2px;
+    height: 10vw;
+    max-height: 167px;
+    background-color: #fff;
+    text-align: center;
+    font-weight: bold;
+    line-height: 30px;
+    min-height: 92px;
+}
+
+#profile-section-link {
+    padding-top: 200px;
+    padding-left: 25px;
+}
+
+.section-link {
+    position: relative;
+    margin-right: 25px;
+    padding: 0 12px;
+    color: #B4B4B4;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 100px;
+    z-index: 0;
+    font-variant: small-caps; /*Stylizes the format of the words used in the section link and makes it small capital letters*/
+}
+
+.section-link:hover {
+    color: #fff;
+    transition: .3s;
+}
+
+.section-link:after { /*Decorative lines beneath section link*/
+    content: "";
+    position: absolute;
+    background-color: #F3a260;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: .3s;
+    z-index: 0;
+}
+
+.section-link:hover:after { /*Shows the decorative lines under section link when hovered over*/
+    width: 100%;
+}
+
+#games-hours-played {
+    margin-top: 100px;
+    margin-left: 25px;
+    width: 90vw;
+}
+
+#games-hours-played-header, #comment-section-header {
+    text-align: center;
+    padding: 20px;
+    width: 20vw;
+    min-width: 195px;
+    background-color: #fff;
+    font-weight: bold;
+    border: solid 2px;
+}
+
+.game-icon {
+    height: 12vh;
+    width: 7vw;
+    min-width: 70px;
+    min-height: 70px;
+    float: left;
+    border: solid 1px;
+    margin: 10px 0px 0px 10px;
+}
+
+.scroll-div-profile {
+    margin-top: 20px;
+    float: right;
+    border: solid 2px;
+    background-color: white;
+    width: 80vw;
+    height: 60vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.game-profile {
+    margin: 20px;
+    border: solid 2px;
+    height: 20vh;
+    min-height: 150px;
+}
+
+.profile-game-name {
+    display: inline-block;
+    border: solid 1px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    height: 12vh;
+    width: 4vw;
+    min-height: 70px;
+    min-width: 80px;
+    line-height: 120px;
+    padding: 0 20px 0 20px;
+    font-size: 0.8em;
+}
+
+.game-description {
+    margin-left: 10px;
+    padding: 10px;
+    width: 20vw;
+    min-width: 172px;
+    max-width: 230px;
+    border: solid 1px;
+    font-weight: bold;
+    font-size: 0.9em;
+    margin-top: 3px;
+}
+
+.hours-played-profile {
+    float: right;
+    margin: 10px 5px;
+    padding: 5px 5px;
+    border: solid 1px;
+    font-weight: bold;
+}
+
+#comments {
+    display: inline-block;
+    width: 90vw;
+    margin-top: 100px;
+    margin-left: 25px;
+    float: none; /*To reset its float property due to the previous div floating left*/
+}
+
+
+.scroll-div-comments {
+    margin-top: 20px;
+    float: right;
+    border: solid 2px;
+    background-color: white;
+    width: 80vw;
+    height: 40vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    direction: rtl;
+}
+
+.comment-profile {
+    width: 70vw;
+    padding: 20px;
+}
+
+.comment-profile-picture {
+    height: 100px;
+    width: 100px;
+    float: left;
+    border: solid 2px;
+}
+
+.comment-username, .comment-message {
+    display: inline-block;
+    border: solid 2px;
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px;
+}
+
+.comment-username {
+    height: 30px;
+    width: 10vw;
+    min-width: 80px;
+}
+
+.comment-message {
+    height: 46px;
+    width: 45vw;
+}
+
+/*End of formatting for profile page*/
+
+/* STORE */
+:root {
+    --store_text_color: #b82005;
+}
+
+#store_body {
+    color: var(--store_text_color)
+}
+#header {
+    display: flex;
+    padding-top: 5px;
+    margin-bottom: 30px;
+}
+#store_body {
+    padding-left: 175px;
+    margin-top: 200px;
+}
+.row {
+    display: flex;
+}
+.store_checkboxes {
+    margin-left: 12px;
+}
+.store_checkboxes td:first-child {
+    width: 300px;
+    height: 30px;
+}
+.store_checkboxes td:last-child {
+    width: 270px;
+}
+.store_checkboxes input[type="checkbox"] {
+    margin-right: 10px;
+}
+.vcenter {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+#store_search {
+    display: flex;
+    position: relative;
+    align-items: stretch;
+}
+
+#storeSearch > * {
+    border: 0.5px solid black;
+    padding: 2px;
+}
+
+#searchButton {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -1.5px;
+}
+#searchInput {
+    padding-left: 22px;
+    width: 250px;
+}
+#searchResults {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: rgba(38, 51, 95, 0.9);
+    padding: 5px;
+    width: 100%;
+}
+
+#searchInput:focus+#searchResults, #searchResults:hover {
+    display: block;
+}
+#searchResults li {
+    padding: 10px 0;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+#searchResults li {
+    margin: 5px 0;
+}
+
+#searchResults li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+h3 {
+    margin: 25px 0 0 30px;
+}
+
+#carousel {
+    display: flex;
+}
+.control {
+    display: flex;
+    position: relative;
+    width: 15px;
+    height: 100%;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: solid var(--store_text_color);
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+}
+.arrow.left {
+    transform: rotate(135deg);
+}
+.arrow.right {
+    transform: rotate(-45deg);
+    right: 0;
+}
+#carousel #store_images {
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+    width: 500px;
+    height: 500px;
+    background-color: burlywood;
+    overflow: hidden;
+}
+
+.displayImage {
+    flex-shrink: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.displayImage:not(.active) {
+    display: none;
+}
+
+#gameInfo {
+    align-items: stretch;
+    position: relative;
+    width: 350px;
+    margin-left: 50px;
+    padding: 10px;
+    background-color: #1c4472;
+    z-index: -1;
+}
+
+#gameName {
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+#gameStars {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;
+
+    font-size: 30px;
+}
+
+#purchase-button {
+    margin-left: 200px;
+    margin-top: 10px;
+    font-weight: bold;
+    padding: 5px;
+    border-radius: 30px;
+}
+/* END OF STORE */
+
+/* BILLING */
+
+#billing_card {
+    box-sizing: border-box;
+    width: 80%;
+    min-height: 300px;
+    background-color: #074388;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 20px;
+    padding: 25px;
+}
+
+#billing_card > h1 {
+    margin-bottom: 10px;;
+}
+
+#billing_itemInfo {
+    display: flex;
+    margin-bottom: 50px;
+    height: 100%;
+}
+
+#billing_itemInfo {
+    background: var(--main);
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#billing_itemInfo > img {
+    width: 150px;
+    margin-right: 15px;
+}
+
+#billing_itemInfoInfo {
+    position: relative;
+    flex: auto;
+}
+
+#billing_itemInfoInfo span {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+}
+
+#billingInfo {
+    margin: auto;
+    width: 250px;
+}
+
+#billingInfo label {
+    font-size: 12px;
+    color: gray;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#billingInfo input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    margin-top: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid gray;
+    caret-color: white;
+    color: white;
+}
+
+#billingInfo input:focus {
+    outline: none;
+    border-color: var(--main);
+}
+
+#billingInfo button {
+    position: relative;
+    padding: 0px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    background: var(--main);
+    font-size: 25px;
+    letter-spacing: 15px;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+#billingInfo button:hover {
+    transform: scale(1.1);
+}
+
+.billing_half {
+    display: flex;
+}
+.billing_half > div {
+    width: 45%;
+}
+.billing_half div:first-child {
+    margin-right: 10%;
+}
+
+/* END OF BILLING */
+
+/*Login page*/
+.login{
+    width: 382px;
+    overflow: hidden;
+    margin-right:200px;
+    margin: 20px 0px 0px 450px;
+    padding: 80px;
+    background: #336DFF;
+    border-radius: 15px ;
+}
+
+.loginlabel {
+    color: #08ffd1;
+    font-size: 17px;
+}
+
+#Uname {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+
+#Pass {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    padding-left: 8px;
+}
+
+#log {
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 17px;
+    padding-left: 7px;
+    color: blue;
+}
+
+span{
+    color: white;
+    font-size: 17px;
+}
+
+.homeButton {
+    margin-top: 20px;
+    display: block;
+}
+/*End of login page formatting*/
+
+/*Library page*/
+#library_search {
+    display: flex;
+    position: relative;
+    align-items: stretch;
+    margin-top: 200px;
+    margin-left: 25px;
+}
+
+#librarySearch > * {
+    border: 0.5px solid black;
+    padding: 2px;
+}
+
+#searchButton {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: -1.5px;
+}
+
+#searchInput {
+    padding-left: 22px;
+    width: 250px;
+}
+
+#searchResults {
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    background-color: rgba(38, 51, 95, 0.9);
+    padding: 5px;
+    width: 100%;
+}
+
+#searchInput:focus+#searchResults, #searchResults:hover {
+    display: block;
+}
+
+#searchResults li {
+    padding: 10px 0;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+#searchResults li {
+    margin: 5px 0;
+    }
+
+#searchResults li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#Game-list-header {
+    width: 200px;
+    height: 50px;
+    border: solid 2px;
+    background-color: #fff;
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 27px;
+    min-width: 200px;
+}
+
+.Game-name{
+    width: 25vmax;
+    height: 48px;
+    border: solid 2px;
+    border-color: black;
+    background-color: #fff;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    display: inline-block;
+    font-size: 25px
+}
+
+.Game-description{
+    width: 25vmax;
+    height: 48px;
+    border: solid 2px;
+    border-color: black;
+    background-color: #336DFF;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    display: inline-block;
+}
+
+#game-container {
+    margin-top: 100px;
+    margin-left: 25px;
+    float: left;
+    position: absolute;
+    border: solid 1px;
+    padding: 20px;
+}
+
+.gameImage {
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    border: solid 2px;
+    float: left;
+}
+
+.playbutton{
+    width: 10vmax;
+    height: 48px;
+    border: solid 2px;
+    border-color: black;
+    background-color: #13DBE3;
+    text-align: center;
+    font-weight: bold;
+    line-height: 50px;
+    display: inline-block;
+}
+
+.play {
+    background-color:#13DBE3;
+}
+/*End of library formatting*/

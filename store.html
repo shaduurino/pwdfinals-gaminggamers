@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+    <title>Store</title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Navigation bar here-->
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a>
+            <ul>
+                <li>
+                    <div class="navitem active"><a href="store.html">Store</a></div>
+                    <div class="navitem"><a href="library.html">Library</a></div>
+                    <div class="navitem"><a href="friends.html">Friends</a></div>
+                    <div class="navitem"><a href="profile.html">Profile</a></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Main body here-->
+        <div id="store_body">
+            <div class="row">
+
+                <div class="store_checkboxes noselect">
+                    <table>
+                        <tr>
+                            <td><input type="checkbox" id="chkAction"><label for="chkAction">Action</label></td>
+                            <td><input type="checkbox" id="chkSports"><label for="chkSports">Sports</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chkSimulation"><label for="chkSimulation">Simulation</label></td>
+                            <td><input type="checkbox" id="chkAdventure"><label for="chkAdventure">Adventure</label></td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" id="chkRPG"><label for="chkRPG">RPG</label></td>
+                            <td><input type="checkbox" id="chkStratergy"><label for="chkStratergy">Stratergy</label></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="store_search">
+                    <div class="vcenter">
+                        <div class="row">
+                            <div id="storeSearch">
+                                <button class="store_search" id="searchButton">🔎</button>
+                                <input class="store_search" id="searchInput" placeholder="Search for game" autocomplete="off">
+                                <div class="store_search" id="searchResults">
+                                    <ul>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--End of row div-->
+
+            <div class="row">
+                <h3>Trending Games</h3>
+            </div>
+
+            <div class="row">
+                <div id="carousel">
+
+                    <div class="control">
+                        <div class="arrow left" onclick="carouselLeft();"></div>
+                    </div>
+
+                    <div id="store_images" class="noselect">
+                        <img class="displayImage" src="assets/wolf.jpg" data-gameName="Wolfy" data-gameDescription="Good boi!" data-gameStars="4" alt = "Picture of a wolf">
+                        <img class="displayImage" src="assets/bird.jpg" data-gameName="Birb" data-gameDescription="Polly want a cracker?" data-gameStars="2" alt = "Picture of a bird">
+                        <img class="displayImage" src="assets/pupper.jpg" data-gameName="Pup" alt = "Picture of a bird" data-gameDescription="She's so coooot! <3 I need to give this one a looooooong description to test out the wordwrap!!! :)" data-gameStars="5" >
+                    </div>
+
+                    <div class="control">
+                        <div class="arrow right" onclick="carouselRight();"></div>
+                    </div>
+
+                </div>
+
+                <div id="gameInfo">
+                    <p id="gameName">Test</p>
+                    <p id="gameDescription">lol</p>
+                    <p id="gameStars">&#9734;&#9733;</p>
+                </div>
+
+            </div> <!--End of row div-->
+
+        </div> <!--End of store_body div-->
+
+        <button id = "purchase-button" onclick = "purchasePage()">Purchase now</button> <!--Redirects to billing page-->
+
+    </main>
+
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.displayImage').classList.add('active');
+        displayInfo();
+    
+        let ul = document.querySelector("#searchResults ul");
+        document.querySelectorAll('.displayImage').forEach(img => {
+            let li = document.createElement("li");
+            let name = img.getAttribute("data-gameName");
+            li.setAttribute('data-gameName', name);
+            li.innerHTML = name;
+            li.addEventListener('click', () => {
+                displayCard(name);
+            });
+            ul.insertAdjacentElement('beforeend', li);
+        });
+    
+        document.getElementById("searchInput").addEventListener('keyup', e => {
+            let inp = e.target;
+            document.querySelectorAll("#searchResults li").forEach(li => {
+                li.style.display = li.getAttribute('data-gameName').toLowerCase().includes(inp.value.toLowerCase()) ? 'block' : 'none';
+            });
+        });
+    </script>
+
+</body>
+
+</html>

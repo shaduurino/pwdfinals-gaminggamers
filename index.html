@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title> Login/Signup </title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a>
+            <ul>
+                <li>
+                    <div class="navitem"><a href="store.html">Store</a></div>
+                    <div class="navitem"><a href="library.html">Library</a></div>
+                    <div class="navitem"><a href="friends.html">Friends</a></div>
+                    <div class="navitem"><a href="profile.html">Profile</a></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id = "self-info">
+            <div class="login">
+
+                <form id="login">
+
+                    <label class = "loginlabel" for ="Uname"><strong>User Name</strong></label>
+                    <input type="text" name="Uname" id="Uname" placeholder="Username" required>
+                    <br><br>
+
+                    <label class = "loginlabel" for = "Pass"><strong>Password</strong></label>
+                    <input type="Password" name="Pass" id="Pass" placeholder="Password" required>
+                    <br><br>
+
+                    <input type="submit" name="log" id="log" value="Log In Here" onclick = "logInAlert();">
+                    <br><br>
+
+                    <input type="checkbox" id="check"><!--Remember me button-->
+                    <span>Remember me</span>
+                    <br>
+
+                    <button type="submit"  onclick = "registerAccount();" class = "homeButton">Register</button> <!--Alert button game-->
+
+                    <button type="button" onclick="alert('Email us at 123@gmail.com with your detail and we will sort it out for you!')" class = "homeButton">Forgot your password?</button><!--Alert button game-->
+    
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

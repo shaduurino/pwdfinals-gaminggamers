@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+    <title>Your library</title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a>
+            <ul>
+                <li>
+                    <div class="navitem"><a href="store.html">Store</a></div>
+                    <div class="navitem active"><a href="library.html">Library</a></div>
+                    <div class="navitem"><a href="friends.html">Friends</a></div>
+                    <div class="navitem "><a href="profile.html">Profile</a></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Main body here-->
+        <div id="library_search">
+            <div class="row">
+                <div id="librarySearch">
+                    <button class="library_search" id="searchbutton">🔎</button>
+                    <input class="library_search" id="searchInput" placeholder="Search for game" autocomplete="off">
+                    <div class="library_search" id="searchResults">
+                    </div>
+                </div>
+            </div>
+        </div>               
+
+        <div id = "game-container">
+              <!--Game list header-->
+              <p id = "Game-list-header">Game list</p>
+
+            <div class="scroll-div">
+                <div class="scroll-object">
+
+                      <!--First game-->
+                      <img src="assets/wolf.jpg" alt = "wolf photo" class = "gameImage" width="200" height="200"/>
+                      <p class = "Game-name">Wolfy</p>
+                      <p class = "Game-description">Good boi!</p>
+                      <button class="playbutton" onclick="show_alert()" value="Show alert box"> Play</button> <!--Alert button game-->
+
+                      <br><br>
+
+                      <!--Second game-->
+                      <img src="assets/bird.jpg" alt = "bird photo" class = "gameImage" />
+                      <p class = "Game-name">Birb</p>
+                      <p class = "Game-description">Polly want a cracker?</p>
+                      <button class="playbutton" onclick="show_alert()" value="Show alert box"> Play</button><!--Alert button game-->
+                      <br><br>
+
+                      <!--Third game-->
+                      <img src="assets/pupper.jpg" alt = "pupper photo" class = "gameImage" />
+                      <p class = "Game-name">Pup</p>
+                      <p class = "Game-description">She's so coooot! </p>
+                      <button class="playbutton" onclick="show_alert()" value="Show alert box"> Play</button><!--Alert button game-->
+                      <br><br>
+
+                </div> <!--End of div scroll-object-->
+            </div> <!--End of div scroll-div-->
+        </div> <!--End of div game-container-->
+
+    </main>
+
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

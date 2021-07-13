@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+    <title>Your profile</title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Navigation bar here-->
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a> <!--Links to main/home page-->
+            <ul>
+                <li>
+                    <div class="navitem"><a href="store.html">Store</a></div>
+                    <div class="navitem"><a href="library.html">Library</a></div>
+                    <div class="navitem"><a href="friends.html">Friends</a></div>
+                    <div class="navitem active"><a href="profile.html">Profile</a></div>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    
+    <main>
+        <!--Main body here-->
+
+        <div id="profile-section-link"> <!--2 section links for sections on page-->
+            <a href = "#games-hours-played" class = "section-link">Games and hours played</a>
+            <a href= "#comments" class = "section-link">Comments</a>
+        </div>
+
+        <div id="profile-info"> <!--User's info-->
+            <img src = "assets/user-icon.png" alt = "Your profile picture" id = "profile-page-picture"/>
+            <p class = "profile-info">Your Username</p>
+            <br>
+            <p class="profile-info">Status</p>
+            <br>
+            <p class="bio">Your biography</p>
+        </div>
+
+        <div id="games-hours-played"> <!--Details about games user played-->
+
+            <p id = "games-hours-played-header">Games and hours played</p>
+
+            <div class="scroll-div-profile">
+                <div class="scroll-object">
+
+                    <div class="game-profile"> <!--Game 1-->
+                        <img src="assets/controller.png" alt = "Game icon" class = "game-icon"/>
+                        <p class="profile-game-name">Game 1</p>
+                        <p class="hours-played-profile">Hours played</p>
+                        <p class="game-description">Description of the game</p>
+                    </div>
+
+                    <div class="game-profile"> <!--Game 2-->
+                        <img src="assets/controller.png" alt = "Game icon" class = "game-icon"/>
+                        <p class="profile-game-name">Game 2</p>
+                        <p class="hours-played-profile">Hours played</p>
+                        <p class="game-description">Description of the game</p>
+                    </div>
+
+                    <div class="game-profile"> <!--Game 3-->
+                        <img src="assets/controller.png" alt = "Game icon" class = "game-icon"/>
+                        <p class="profile-game-name">Game 3</p>
+                        <p class="hours-played-profile">Hours played</p>
+                        <p class="game-description">Description of the game</p>
+                    </div>
+
+                    <div class="game-profile"> <!--Game 4-->
+                        <img src="assets/controller.png" alt = "Game icon" class = "game-icon"/>
+                        <p class="profile-game-name">Game 4</p>
+                        <p class="hours-played-profile">Hours played</p>
+                        <p class="game-description">Description of the game</p>
+                    </div>
+
+                </div> <!--End of scroll-object div-->
+            </div> <!--End of scroll-div-profile div-->
+
+        </div> <!--End of games-hours-played div-->
+
+        <div id = "comments"> <!--Comment section for profile page-->
+
+            <p id ="comment-section-header">Comments</p>
+
+            <div class="scroll-div-comments">
+                <div class="scroll-object">
+                    
+                    <div class="comment-profile"> <!--Comment from user 1-->
+                        <img src="assets/user-icon.png" alt = "Profile picture" class = "comment-profile-picture"/>
+                        <p class = "comment-username">Username</p>
+                        <br>
+                        <p class = "comment-message">Comment</p>
+                    </div>
+
+                    <div class="comment-profile"> <!--Comment from user 2-->
+                        <img src="assets/user-icon.png" alt = "Profile picture" class = "comment-profile-picture"/>
+                        <p class = "comment-username">Username</p>
+                        <br>
+                        <p class = "comment-message">Comment</p>
+                    </div>
+
+                    <div class="comment-profile"> <!--Comment from user 3-->
+                        <img src="assets/user-icon.png" alt = "Profile picture" class = "comment-profile-picture"/>
+                        <p class = "comment-username">Username</p>
+                        <br>
+                        <p class = "comment-message">Comment</p>
+                    </div>
+
+                    <div class="comment-profile"> <!--Comment from user 4-->
+                        <img src="assets/user-icon.png" alt = "Profile picture" class = "comment-profile-picture"/>
+                        <p class = "comment-username">Username</p>
+                        <br>
+                        <p class = "comment-message">Comment</p>
+                    </div>
+
+
+                </div> <!--End of scroll object div-->
+            </div> <!--End of scroll-div-comments div-->
+
+        </div> <!--End of comments div-->
+
+    </main>
+    
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+</body>
+
+
+</html>

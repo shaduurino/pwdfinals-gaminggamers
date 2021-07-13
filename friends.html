@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+    <title>Friends</title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Navigation bar here-->
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a> <!--Links to main/home page-->
+            <ul>
+                <li>
+                    <div class="navitem"><a href="store.html">Store</a></div> 
+                    <div class="navitem"><a href="library.html">Library</a></div> 
+                    <div class="navitem active"><a href="friends.html">Friends</a></div>
+                    <div class="navitem"><a href="profile.html">Profile</a></div> 
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    
+    <main>
+        <!--Main body here-->
+        <div id = "self-info">
+            <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+            <p class = "friends-info">Your Username</p>
+            <br>
+            <p class = "friends-info">Status</p>
+        </div>
+
+        <div id = "friends-list">
+
+            <!--Friends list header-->
+            <p id = "friends-list-header">Friends List</p>
+            
+            <div class="scroll-div">
+                <div class="scroll-object">
+
+                    <!--First friend-->
+                    <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+                    <p class = "friends-info">Friend 1</p>
+                    <br>
+                    <p class = "friends-info">Status</p>
+                    <br>
+
+                    <!--Second friend-->
+                    <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+                    <p class = "friends-info">Friend 2</p>
+                    <br>
+                    <p class = "friends-info">Status</p>
+                    <br>
+
+                    <!--Third friend-->
+                    <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+                    <p class = "friends-info">Friend 3</p>
+                    <br>
+                    <p class = "friends-info">Status</p>
+                    <br>
+
+                    <!--Fourth friend-->
+                    <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+                    <p class = "friends-info">Friend 4</p>
+                    <br>
+                    <p class = "friends-info">Status</p>
+                    <br>
+
+                    <!--Fifth friend-->
+                    <img src="assets/user-icon.png" alt = "profile picture" class = "profile-picture" />
+                    <p class = "friends-info">Friend 5</p>
+                    <br>
+                    <p class = "friends-info">Status</p>
+                    <br>  
+
+                </div> <!--End of div scroll-object-->
+            </div> <!--End of div scroll-div-->
+
+        </div> <!--End of div friends-list-->
+
+        <div id = "friend-request">
+
+            <p id = "friend-request-header">Friends Requests</p>
+
+            <div class="scroll-div-friend-request">
+                <div class="scroll-object">
+
+                   <label class = "new-friends-text"><input type = "checkbox" class = "new-friends">Friend 1</label>
+                   <label class = "new-friends-text"><input type = "checkbox" class = "new-friends">Friend 2</label>
+                   <label class = "new-friends-text"><input type = "checkbox" class = "new-friends">Friend 3</label>
+                   <label class = "new-friends-text"><input type = "checkbox" class = "new-friends">Friend 4</label>
+
+                </div> <!--End of div scroll-object-->
+            </div> <!--End of div scroll-div-->
+
+            <input type = "submit" value = "Accept" id = "accept-friends" onclick = "acceptFriends()">
+
+        </div> <!--End fo friend request div-->
+
+    </main>
+    
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+</body>
+
+
+</html>

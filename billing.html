@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+    <title>Billing</title>
+    <meta charset = "UTF-8">
+    <link rel = "icon" type = "image/jpg" href = "assets/icon.jpg">
+    <link rel = "stylesheet" href = "assets/style.css">
+    <script src = "assets/script.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <!--Navigation bar here-->
+        <nav>
+            <a href="index.html"><img src = "assets/icon.jpg" alt = "GamingGamers logo" id = "logo"></a>
+            <ul>
+                <li>
+                    <div class="navitem"><a href="store.html">Store</a></div>
+                    <div class="navitem"><a href="library.html">Library</a></div>
+                    <div class="navitem"><a href="friends.html">Friends</a></div>
+                    <div class="navitem"><a href="profile.html">Profile</a></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!--Main body here-->
+        <div id="billing_card">
+
+            <h1>Billing</h1>
+
+            <div id="billing_itemInfo">
+                <img src="assets/wolf.jpg" alt = "Picture of a wolf">
+                <div id="billing_itemInfoInfo">
+                    <h2>Wolfy</h2>
+                    <p>Good boi!</p>
+                    <span>ENTER PRICE HERE</span>
+                </div>
+            </div>
+
+            <form id="billingInfo" method="post">
+                <label for="pay_cardNumber">Card number</label><br>
+                <input type="text" id="pay_cardNumber"><br>
+                
+                <label for="pay_nameOnCard">Name On Card</label><br>
+                <input type="text" id="pay_nameOnCard"><br>
+                
+                <div class="billing_half">
+                    <div>
+                        <label for="pay_expiaryDate">Exp. date</label><br>
+                        <input type="text" maxlength=4 id="pay_expiaryDate" placeholder="MM/YY"><br>
+                    </div>
+                    
+                    <div>
+                        <label for="pay_CVV">CVV</label><br>
+                        <input type="text" id="pay_CVV">
+                    </div>
+                </div>
+
+                <button type="submit">PAY</button>
+            </form>
+
+        </div> <!--End of billing_card div-->
+
+    </main>
+
+    <footer>
+        <!--Footer here-->
+        <p>&copy; GamingGamers. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
